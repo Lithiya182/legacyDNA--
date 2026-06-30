@@ -1,0 +1,23 @@
+Event: TechFest 2024
+Date: October, 2024
+Venue: Main Campus Hall
+Attendance: 850
+Status: Average
+
+Sponsors:
+- TechCorp: Paid early. Returned next year.
+- CloudNine: Paid on time. Returned next year.
+
+Highlights:
+- Early marketing campaigns launched 30+ days before the event boosted attendance.
+
+Problems:
+- Food and logistics issues appeared again. The new caterer couldn't handle the crowd.
+
+Decisions Made:
+- Decided to completely change the vendor strategy for 2025 to Premium Catering Solutions.
+- Booked the 2025 venue 60 days in advance.
+
+Lessons Learned:
+- Early marketing works.
+- Relying on cheap food vendors ruins the event.

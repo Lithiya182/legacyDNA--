@@ -1,0 +1,10 @@
+Meeting: Post Event Planning -- TechFest 2023
+Date: November 5, 2023
+Attendees: Project Lead, Logistics Head, Sponsor Lead
+Agenda: Retrospective
+Decisions:
+- Firing StartupX as a sponsor for defaulting on payment.
+Action Items:
+- Logistics Head to find a new food vendor for 2024.
+Budget Notes:
+- Lost money on catering.

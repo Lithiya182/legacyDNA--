@@ -1,0 +1,24 @@
+Event: TechFest 2025
+Date: October, 2025
+Venue: City Convention Center
+Attendance: 1400
+Status: Success
+
+Sponsors:
+- TechCorp: Paid early.
+- CloudNine: Paid on time.
+
+Highlights:
+- Early marketing campaigns launched 30+ days before the event correlated with highest attendance.
+- Student Ambassador program brought in 40% of attendees.
+- Confirmed venue 60 days in advance smoothed logistics.
+
+Problems:
+- Minor Wi-Fi dropouts.
+- No food or logistics issues! The new premium vendor worked perfectly.
+
+Decisions Made:
+- Retain premium vendor for next year.
+
+Lessons Learned:
+- Three factors guarantee success: early promotion, student ambassador program, and a confirmed venue 60 days in advance.
