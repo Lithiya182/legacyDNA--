@@ -1,24 +1,32 @@
 Event: TechFest 2025
-Date: October, 2025
-Venue: City Convention Center
-Attendance: 1400
-Status: Success
+Date: March 14-16, 2025
+Venue: Grand Convocation Hall, Main Campus
+Attendance: 4,800 attendees (up from 3,100 in 2024 and 2,400 in 2023)
+Status: Completed Successfully
 
 Sponsors:
-- TechCorp: Paid early.
-- CloudNine: Paid on time.
+- TechCorp (Platinum Sponsor, 3rd consecutive year)
+- Global Systems Inc (Gold Sponsor, 2nd consecutive year)
+- Nova Robotics (Silver Sponsor, new this year)
 
 Highlights:
-- Early marketing campaigns launched 30+ days before the event correlated with highest attendance.
-- Student Ambassador program brought in 40% of attendees.
-- Confirmed venue 60 days in advance smoothed logistics.
+- Largest attendance in TechFest history, a 55% increase over 2024
+- Premium Catering Solutions delivered all three days without a single complaint logged
+- Student Ambassador Program (expanded from 12 to 40 members) drove early ticket signups across all departments
+- Keynote on applied robotics drew the largest single-session crowd to date
+- Zero major logistics incidents reported across the full event
 
 Problems:
-- Minor Wi-Fi dropouts.
-- No food or logistics issues! The new premium vendor worked perfectly.
+- Wi-Fi congestion in the main hall during peak hours on Day 2 (minor, resolved within 40 minutes)
+- One workshop room double-booked due to a scheduling spreadsheet error
 
 Decisions Made:
-- Retain premium vendor for next year.
+- Confirmed venue and vendor contracts 60 days in advance, compared to roughly 10 days before the 2023 event
+- Replaced Campus Bites with Premium Catering Solutions following repeated 2023-2024 food service complaints
+- Expanded the Student Ambassador Program based on its success driving 2024 attendance growth
+- Introduced a shared scheduling tool to prevent the kind of manual booking errors seen this year
 
 Lessons Learned:
-- Three factors guarantee success: early promotion, student ambassador program, and a confirmed venue 60 days in advance.
+- Early vendor and venue confirmation (60+ days out) directly correlates with smoother execution and higher attendance
+- Switching catering vendors after sustained complaints (rather than tolerating repeat issues) eliminates a recurring pain point
+- Manual spreadsheet-based room scheduling is no longer reliable at this event size; a shared tool is required going forward

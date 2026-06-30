@@ -1,7 +1,7 @@
 Sponsor: StartupX
-Events Sponsored: 2023
-Amount: 2000 USD
-Payment: Defaulted
-Communication: Poor
-Returned: No
-Remarks: StartupX defaulted on its 2023 sponsorship payment and was dropped from future events.
+Events Sponsored: TechFest 2023 (committed only)
+Amount: $8,000 committed, $0 received
+Payment: Defaulted — no payment received before or after the event
+Communication: Unresponsive after initial sponsorship agreement; missed two scheduled check-in calls
+Returned: No — did not respond to outreach for TechFest 2024 or TechFest 2025
+Remarks: Sponsorship commitment was not honored. Logo and booth space were allocated in the 2023 program based on the agreement, creating a gap when payment did not arrive. Recommend requiring signed payment confirmation before allocating booth space or marketing materials to any new sponsor going forward. Avoid re-engaging without upfront payment terms.
