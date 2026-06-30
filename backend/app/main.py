@@ -1,29 +1,32 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.api.upload import router as upload_router
-app = FastAPI(
-    title="LegacyDNA Backend",
-    description="Backend API for LegacyDNA Hackathon Project",
-    version="1.0.0"
-)
+import os
+from dotenv import load_dotenv
 
-# Configure CORS
+load_dotenv()
+
+# Import routers
+from app.api.upload import router as upload_router
+from app.api.query import router as query_router
+from app.api.compare import router as compare_router
+from app.api.insights import router as insights_router
+
+app = FastAPI(title="LegacyDNA Backend")
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allow all origins for hackathon MVP
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-app.include_router(
-    upload_router,
-    prefix="/api",
-    tags=["Upload"]
-)
-# Root endpoint
+
+# Register Routers
+app.include_router(upload_router, prefix="/api", tags=["Upload"])
+app.include_router(query_router, prefix="/api", tags=["Query"])
+app.include_router(compare_router, prefix="/api", tags=["Compare"])
+app.include_router(insights_router, prefix="/api", tags=["Insights"])
+
 @app.get("/")
-def root():
-    return {
-        "status": "success",
-        "message": "LegacyDNA Backend is Running 🚀"
-    }
+def read_root():
+    return {"status": 200, "message": "LegacyDNA API is running"}
