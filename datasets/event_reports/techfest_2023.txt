@@ -1,0 +1,23 @@
+Event: TechFest 2023
+Date: October, 2023
+Venue: Main Campus Hall
+Attendance: 500
+Status: Failed
+
+Sponsors:
+- TechCorp: Paid on time. Returned next year.
+- StartupX: Defaulted. Did not return next year.
+
+Highlights:
+- Great speaker line-up.
+
+Problems:
+- Severe food and logistics issues.
+- Marketing started too late (only 10 days before).
+
+Decisions Made:
+- Need to start marketing earlier next time.
+
+Lessons Learned:
+- Last-minute marketing limits attendance.
+- Do not use Campus Bites for catering again.

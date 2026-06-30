@@ -13,3 +13,6 @@ uploads/
 *.db
 .DS_Store
 >>>>>>> f535ef0a9d505ce19654b2687e15ac397bbf9782
+
+.env
+.env.*
