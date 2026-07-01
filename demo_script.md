@@ -1,62 +1,25 @@
-# Demo Script
+# LegacyDNA - Demo Script V2 (Groq Powered)
 
-## Step 1 -- Upload
-**Say:** "LegacyDNA doesn't search documents. It remembers them."
-**Do:** Drag TechFest 2023, 2024, 2025 reports + sponsor files into upload area
-**Expected Result:** Progress bar -> "Memory Created" confirmation
-**Time:** 30 seconds
+## Context for Judges (15 seconds)
+**Say:** "Event teams lose millions in institutional knowledge every time a project manager graduates or leaves. LegacyDNA prevents organizational amnesia by turning standard files into an AI memory graph."
 
-## Step 2 -- Remember
-**Say:** "Watch as three years of organizational knowledge become memory."
-**Do:** Show memory ingestion progress or confirmation screen
-**Expected Result:** Document count increases on dashboard
-**Time:** 20 seconds
+## Step 1 - The Knowledge Ingestion (30 seconds)
+**Say:** "Here are standard, messy files from three years of TechFest: meeting notes, sponsor contracts, and post-mortems."
+**Do:** Upload the files (TechFest 23, 24, 25 + Sponsor files). 
+**Say:** "We aren't just saving files. Our backend is using Cognee to parse these and map the relationships into a memory graph."
+*Wait for "✅ Memory successfully created" in UI/Logs.*
 
-## Step 3 -- Recall
-**Say:** "Now let's ask it something no search engine could answer."
-**Do:** Type "How was TechFest 2025 organized?" into query box
-**Expected Result:** Detailed answer citing venue, sponsors, decisions
-**Time:** 40 seconds
+## Step 2 - The 'Gold Question' (40 seconds)
+**Say:** "Let's ask a question that would normally take a human two hours of reading old emails to answer."
+**Do:** Type: *"What logistical mistakes repeated across multiple years?"*
+**Say:** "Because we wired our memory graph to Groq's Llama 3, we get sub-second reasoning."
+*Wait for answer about Campus Bites failing in 23/24.*
 
-## Step 4 -- Improve/Memify
-**Say:** "Now watch it find patterns across three years automatically."
-**Do:** Click "Generate Insights" button
-**Expected Result:** Cards showing attendance trend, sponsor pattern, recurring problem
-**Time:** 30 seconds
+## Step 3 - The Strategic Question (40 seconds)
+**Say:** "It doesn't just know facts; it understands strategy."
+**Do:** Type: *"How should next year's team improve attendance?"*
+*Wait for answer about 30+ day marketing and Student Ambassadors.*
+**Say:** "It connected the success of the Ambassador program in 2024 to the massive growth in 2025, synthesizing a clear recommendation for 2026."
 
-## Step 5 -- Graph
-**Say:** "Every piece of knowledge is connected."
-**Do:** Navigate to Memory Graph page
-**Expected Result:** Nodes for events, sponsors, meetings, lessons visually linked
-**Time:** 20 seconds
-
-## Step 6 -- Compare
-**Say:** "Let's compare the worst and best years."
-**Do:** Select TechFest 2023 vs TechFest 2025, click Compare
-**Expected Result:** Side-by-side breakdown with AI explanation
-**Time:** 30 seconds
-
-## Step 7 -- Forget
-**Say:** "Organizations need the right to forget too."
-**Do:** Delete TechFest 2022 memory (pre-load a dummy one), then ask about it
-**Expected Result:** "No memory found for TechFest 2022"
-**Time:** 20 seconds
-
-## Step 8 -- Final Recommendation
-**Say:** "One last question -- what should next year's team do?"
-**Do:** Type "What advice would you give next year's organizing team?"
-**Expected Result:** 3-5 synthesized recommendations from all retained memories
-**Time:** 40 seconds
-
-| Step | Time |
-|------|------|
-| Upload | 30s |
-| Remember | 20s |
-| Recall | 40s |
-| Improve | 30s |
-| Graph | 20s |
-| Compare | 30s |
-| Forget | 20s |
-| Final Rec | 40s |
-| Buffer | 30s |
-| **Total** | **4:00** |
+## Step 4 - Conclusion (15 seconds)
+**Say:** "With LegacyDNA, next year's team doesn't start from scratch. They start with the combined experience of every team that came before them."
