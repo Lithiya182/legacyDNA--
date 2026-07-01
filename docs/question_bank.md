@@ -39,3 +39,17 @@
 **Q: Based on three years of data, who should we recommend as TechFest's anchor sponsor going forward, and why?**
 *Expected Answer:* TechCorp — three consecutive years of early, full payment, consistent communication, and increasing financial commitment make it the most dependable sponsor for long-term budget planning.
 *Source Files:* techcorp.txt, techfest_2023.txt, techfest_2024.txt, techfest_2025.txt
+
+## 🏆 Gold Questions (Judge Demo Scenarios)
+
+**Q1: Which sponsors were most reliable across all of our events?**
+*Expected Answer:* TechCorp is the most reliable (sponsored all 3 years, paid early, increased commitment). Global Systems Inc is also highly reliable (paid on time for 2024 and 2025). Avoid StartupX.
+
+**Q2: What logistical mistakes repeated across multiple years?**
+*Expected Answer:* Food and logistics issues caused by the vendor "Campus Bites" repeated in both 2023 and 2024. This was finally resolved in 2025 by switching to Premium Catering Solutions.
+
+**Q3: How should next year's team improve attendance?**
+*Expected Answer:* Start marketing at least 30-60 days before the event, and expand the Student Ambassador Program, which was proven to drive attendance growth in 2024 and 2025.
+
+**Q4: Compare our best and worst events.**
+*Expected Answer:* TechFest 2023 was a failure due to late marketing (10 days prior) and terrible catering by Campus Bites, resulting in only 2,400 attendees and a defaulted sponsor (StartupX). TechFest 2025 was the best, with 4,800 attendees, zero catering complaints (Premium Catering), and early venue booking.
