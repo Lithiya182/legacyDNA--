@@ -1,7 +1,7 @@
 Event: TechFest 2024
 Date: October, 2024
 Venue: Main Campus Hall
-Attendance: 850
+Attendance: 3100
 Status: Average
 
 Sponsors:
