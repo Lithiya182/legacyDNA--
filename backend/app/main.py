@@ -2,8 +2,10 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import os
 from dotenv import load_dotenv
+from app.models.database import init_db
 
 load_dotenv()
+init_db()
 
 # Import routers
 from app.api.upload import router as upload_router

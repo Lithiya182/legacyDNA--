@@ -7,9 +7,7 @@ UPLOAD_DIR = os.getenv("UPLOAD_DIR", "uploads")
 
 
 def save_upload_file(file: UploadFile) -> str:
-    """
-    Save uploaded file to disk and return its path.
-    """
+    """Save uploaded file to disk and return its path."""
 
     Path(UPLOAD_DIR).mkdir(parents=True, exist_ok=True)
 
