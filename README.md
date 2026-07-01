@@ -9,12 +9,16 @@ LegacyDNA prevents organizational amnesia by transforming scattered event report
 - Database: SQLite
 
 ## How to run locally
-1. pip install -r requirements.txt
-2. uvicorn main:app --reload
+1. Navigate to the backend folder:
+   `cd backend`
+2. Install dependencies:
+   `pip install -r requirements.txt`
+3. Run the FastAPI server:
+   `uvicorn app.main:app --reload`
 
 ## Team
 - Backend / Data Engineer
 - Frontend Engineer
 
 ## Demo flow
-See demo_script.md
+See docs/insight_scenarios.md and docs/test_report.md
