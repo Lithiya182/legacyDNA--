@@ -1,11 +1,11 @@
 Event: TechFest 2023
 Date: October, 2023
 Venue: Main Campus Hall
-Attendance: 500
+Attendance: 2400
 Status: Failed
 
 Sponsors:
-- TechCorp: Paid on time. Returned next year.
+- TechCorp: Paid early. Returned next year.
 - StartupX: Defaulted. Did not return next year.
 
 Highlights:
