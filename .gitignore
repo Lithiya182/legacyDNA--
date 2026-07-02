@@ -1,18 +1,8 @@
-<<<<<<< HEAD
 venv/
 .env
-__pycache__/
-*.pyc
-uploads/
-=======
-﻿venv/
-.env
+.env.*
 __pycache__/
 *.pyc
 uploads/
 *.db
 .DS_Store
->>>>>>> f535ef0a9d505ce19654b2687e15ac397bbf9782
-
-.env
-.env.*
