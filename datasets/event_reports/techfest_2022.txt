@@ -1,0 +1,39 @@
+ANNUAL POST-EVENT EVALUATION REPORT: TECHNOVA 2022
+Event Title: TechNova 2022: The Future of Autonomous Systems
+Date: November 18–20, 2022
+Location: University Central Campus & Engineering Block
+1. Executive Summary
+TechNova 2022 marked the university’s first full-scale return to an in-person technology festival following two years of hybrid and remote iterations. The event focused on robotics, autonomous vehicles, and machine learning. Despite a successful turnout, the event highlighted significant gaps in logistical planning and volunteer management that required immediate attention for future cycles.
+2. Attendance and Engagement
+The festival saw a total of 2,850 unique attendees.
+Student Participants: 1,900 from the home university; 750 from 18 visiting institutions.
+Industry Delegates: 120 recruiters and engineers.
+Keynote Attendance: The opening ceremony featured a standing-room-only crowd of 1,200 in the Main Auditorium.
+Workshop Participation: The "Embedded Systems 101" workshop was oversubscribed by 40%, indicating a high demand for practical, hands-on hardware training.
+3. Budgetary Performance
+The total approved budget was $35,000.
+Revenue: $38,200 (Sponsorships: $28,000; Registration Fees: $7,500; University Grant: $2,700).
+Expenditure:
+Technical Equipment & Kits: $12,000 (34% of budget)
+Hospitality & Catering: $9,500 (27% of budget)
+Marketing & Branding: $6,000 (17% of budget)
+Prize Money: $5,000 (14% of budget)
+Miscellaneous/Contingency: $2,700 (8% of budget)
+The event concluded with a surplus of $3,200, which has been transferred to the Student Innovation Fund.
+4. Event Highlights
+The Robo-Sprint 2022: A high-speed obstacle course for autonomous rovers. This was the most-watched event and secured local media coverage.
+Industry Networking Night: A successful "speed-dating" style session between senior engineering students and 15 partner companies.
+Sustainable Tech Showcase: 25 student projects focused on renewable energy were exhibited in the Central Quadrangle.
+5. Operational Challenges and Problems
+Logistics Failures: The transport of heavy robotics equipment from the storage facility to the competition arena was delayed by four hours on Day 1 because the rented transport vehicles were not large enough for the crates.
+Volunteer No-Shows: We experienced a 30% attrition rate in the volunteer workforce on Day 2. Most cited lack of clear instructions and exhaustion as the reasons for not returning.
+Technical Bottleneck: The online registration portal crashed three times during the 48-hour period leading up to the event due to high traffic, leading to approximately 150 frustrated participants who had to be registered manually.
+6. Lessons Learned (Patterns)
+Communication Pattern: There was a consistent pattern of information silos between the Finance Team and the Logistics Team, leading to duplicate orders for supplies.
+Attendance Pattern: High-energy competitive events (like robotics) saw 90% more engagement than theoretical panel discussions.
+Procurement Pattern: Ordering technical components from overseas vendors less than six weeks before the event led to three key shipments being stuck in customs, requiring expensive local emergency purchases.
+7. Recommendations for Future Organizers
+Actionable Step: Establish a "Logistics Audit" 48 hours before the event to verify vehicle sizes and load capacities.
+Actionable Step: Implement a "Volunteer Training & Certification" program where students must attend a mandatory briefing session to receive their event credentials.
+Actionable Step: Move the registration system to a scalable cloud-based server (AWS or Azure) at least one month prior to the launch.
+Actionable Step: Assign a dedicated "Liaison Officer" to sit between Finance and Logistics to approve all expenditures over $200.
