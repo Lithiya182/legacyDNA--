@@ -25,7 +25,7 @@ async def upload_file(file: UploadFile = File(...)):
     if file_extension not in ALLOWED_EXTENSIONS:
         raise HTTPException(
             status_code=400,
-            detail="Unsupported file type. Only PDF, DOCX and TXT are allowed."
+            detail=f"Unsupported file type '{file_extension}'. Only PDF, DOCX and TXT are allowed."
         )
 
     # 1. Save file locally
