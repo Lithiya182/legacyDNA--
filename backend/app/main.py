@@ -1,17 +1,20 @@
+from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-import os
-from dotenv import load_dotenv
 
-load_dotenv()
-
-# Import routers
+from app.utils.db_handler import initialize_database
 from app.api.upload import router as upload_router
 from app.api.query import router as query_router
 from app.api.compare import router as compare_router
 from app.api.insights import router as insights_router
+from app.api.recommendations import router as recommendations_router 
 
-app = FastAPI(title="LegacyDNA Backend")
+load_dotenv()
+
+app = FastAPI(
+    title="LegacyDNA Backend API",
+    version="1.0.0"
+)
 
 app.add_middleware(
     CORSMiddleware,
@@ -21,12 +24,19 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Register Routers
+
+@app.on_event("startup")
+def startup():
+    initialize_database()
+
+
+@app.get("/")
+def root():
+    return {"message": "LegacyDNA Backend API is running!"}
+
+
 app.include_router(upload_router, prefix="/api", tags=["Upload"])
 app.include_router(query_router, prefix="/api", tags=["Query"])
 app.include_router(compare_router, prefix="/api", tags=["Compare"])
 app.include_router(insights_router, prefix="/api", tags=["Insights"])
-
-@app.get("/")
-def read_root():
-    return {"status": 200, "message": "LegacyDNA API is running"}
+app.include_router(recommendations_router, prefix="/api", tags=["Recommendations"])
