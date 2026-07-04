@@ -38,7 +38,5 @@ def root():
 app.include_router(upload_router, prefix="/api", tags=["Upload"])
 app.include_router(query_router, prefix="/api", tags=["Query"])
 app.include_router(compare_router, prefix="/api", tags=["Compare"])
-
 app.include_router(insights_router, prefix="/api", tags=["Insights"])
 app.include_router(recommendations_router, prefix="/api", tags=["Recommendations"])
-

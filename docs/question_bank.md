@@ -1,55 +1,41 @@
-# LegacyDNA - Question Bank
+# LegacyDNA - 30 Gold Question Bank
 
-**Q: Which sponsor is the most reliable, and which one should we avoid?**
-*Expected Answer:* TechCorp is the most reliable (sponsored all 3 years, always paid early, increased commitment each year). Avoid StartupX (defaulted on its 2023 commitment and never returned).
-*Source Files:* techcorp.txt, startupx.txt, techfest_2023.txt
+## Category 1: Sponsors (8 Questions)
+1. Which sponsor paid earliest across all years?
+2. Which sponsor should never be re-engaged and why?
+3. How did TechCorp's commitment change year over year from 2023 to 2025?
+4. Did Global Systems Inc pay on time, and what is their status for 2026?
+5. What tier of sponsor was CloudNine in 2025?
+6. What mistake did we make with StartupX that we should avoid in the future?
+7. Who is the most reliable anchor sponsor for TechFest?
+8. How much did TechCorp pay in 2024?
 
-**Q: Why are we using Premium Catering Solutions for 2025?**
-*Expected Answer:* Because Campus Bites caused repeated food and logistics complaints in 2023 and 2024, leading to a decision to switch caterers for 2025.
-*Source Files:* techfest_2025.txt, techfest_2023.txt, techfest_2024.txt
+## Category 2: Attendance (8 Questions)
+9. What was the exact attendance for TechFest 2023, 2024, and 2025?
+10. What was the attendance growth rate from 2024 to 2025?
+11. What single decision had the biggest positive impact on attendance in 2025?
+12. How did the Student Ambassador program change from 2024 to 2025?
+13. Why did TechFest 2023 have the lowest attendance?
+14. How many days in advance did marketing launch in 2024?
+15. Did early marketing correlate with higher attendance? 
+16. Which department drove early ticket signups in 2025?
 
-**Q: How did we fix our marketing strategy between 2023 and 2025?**
-*Expected Answer:* In 2023, marketing started too close to the event. For 2025, venue and vendor contracts were confirmed 60 days in advance and the Student Ambassador Program was expanded from 12 to 40 members, contributing to a 55% attendance increase.
-*Source Files:* techfest_2023.txt, techfest_2025.txt
+## Category 3: Events & Logistics (6 Questions)
+17. What catering company ruined TechFest 2023 and 2024?
+18. Who was the caterer for TechFest 2025, and how did they perform?
+19. What minor logistics issue occurred on Day 2 of TechFest 2025?
+20. Why was a workshop room double-booked in 2025?
+21. What was the venue for TechFest 2025?
+22. Which session drew the largest single-session crowd in TechFest history?
 
-**Q: How has TechFest attendance changed over the past three years?**
-*Expected Answer:* Attendance grew each year: 2,400 in 2023, 3,100 in 2024, and 4,800 in 2025 — a 55% jump in the final year, driven by earlier planning and an expanded ambassador program.
-*Source Files:* techfest_2023.txt, techfest_2024.txt, techfest_2025.txt
+## Category 4: Lessons Learned (4 Questions)
+23. What did we learn about manual spreadsheet room scheduling?
+24. What happens when we rely on cheap food vendors?
+25. How does last-minute marketing affect the event?
+26. What happens if we allocate booth space without signed payment confirmation?
 
-**Q: What recurring problem affected TechFest for multiple years, and was it ever resolved?**
-*Expected Answer:* Food and logistics issues tied to Campus Bites occurred in both 2023 and 2024. It was resolved in 2025 by switching to Premium Catering Solutions, which ran all three days with zero complaints.
-*Source Files:* techfest_2023.txt, techfest_2024.txt, techfest_2025.txt
-
-**Q: Which sponsors have been with TechFest the longest, and how has their support changed?**
-*Expected Answer:* TechCorp has sponsored all three years, upgrading from Gold to Platinum tier with increasing payment amounts each year ($15,000 → $18,000 → $22,000).
-*Source Files:* techcorp.txt
-
-**Q: Did Global Systems Inc pay on time, and should we expect them to return?**
-*Expected Answer:* Yes, Global Systems Inc paid in full within a week of each event in both 2024 and 2025, and has already confirmed as Gold Sponsor for 2026.
-*Source Files:* global_systems.txt
-
-**Q: What went wrong with StartupX's sponsorship, and what should we change going forward?**
-*Expected Answer:* StartupX committed $8,000 for 2023 but never paid, and went unresponsive afterward. The recommendation is to require signed payment confirmation before allocating booth space or marketing materials to new sponsors.
-*Source Files:* startupx.txt
-
-**Q: What decisions made in 2024 directly improved outcomes in 2025?**
-*Expected Answer:* The Student Ambassador Program, which proved effective at driving 2024 attendance growth, was expanded further for 2025 (from 12 to 40 members), contributing to the largest attendance in TechFest history.
-*Source Files:* techfest_2024.txt, techfest_2025.txt
-
-**Q: Based on three years of data, who should we recommend as TechFest's anchor sponsor going forward, and why?**
-*Expected Answer:* TechCorp — three consecutive years of early, full payment, consistent communication, and increasing financial commitment make it the most dependable sponsor for long-term budget planning.
-*Source Files:* techcorp.txt, techfest_2023.txt, techfest_2024.txt, techfest_2025.txt
-
-## 🏆 Gold Questions (Judge Demo Scenarios)
-
-**Q1: Which sponsors were most reliable across all of our events?**
-*Expected Answer:* TechCorp is the most reliable (sponsored all 3 years, paid early, increased commitment). Global Systems Inc is also highly reliable (paid on time for 2024 and 2025). Avoid StartupX.
-
-**Q2: What logistical mistakes repeated across multiple years?**
-*Expected Answer:* Food and logistics issues caused by the vendor "Campus Bites" repeated in both 2023 and 2024. This was finally resolved in 2025 by switching to Premium Catering Solutions.
-
-**Q3: How should next year's team improve attendance?**
-*Expected Answer:* Start marketing at least 30-60 days before the event, and expand the Student Ambassador Program, which was proven to drive attendance growth in 2024 and 2025.
-
-**Q4: Compare our best and worst events.**
-*Expected Answer:* TechFest 2023 was a failure due to late marketing (10 days prior) and terrible catering by Campus Bites, resulting in only 2,400 attendees and a defaulted sponsor (StartupX). TechFest 2025 was the best, with 4,800 attendees, zero catering complaints (Premium Catering), and early venue booking.
+## Category 5: Future Recommendations (4 Questions)
+27. What should next year's team do differently for room scheduling?
+28. What is the minimum notice period required for venue confirmation?
+29. Who should be hired for catering next year?
+30. Summarize the top 3 pieces of advice for the TechFest 2026 organizing team.

@@ -12,6 +12,7 @@ class QueryRequest(BaseModel):
 class QueryResponse(BaseModel):
     answer: str
     sources: List[str]
+    supporting_memories: List[str] = []
 
 class CompareRequest(BaseModel):
     event_a: str
@@ -23,10 +24,20 @@ class CompareResponse(BaseModel):
     weaknesses: str
     lessons: str
 
+class InsightItem(BaseModel):
+    insight: str
+    source_documents: List[str] = []
+
+class RecommendationItem(BaseModel):
+    recommendation: str
+    reason: str = ""
+    supporting_evidence: str = ""
+    source_documents: List[str] = []
+
 class InsightsResponse(BaseModel):
-    success_patterns: List[str]
-    recurring_problems: List[str]
-    recommendations: List[str]
+    success_patterns: List[InsightItem] = []
+    recurring_problems: List[InsightItem] = []
+    recommendations: List[RecommendationItem] = []
 
 class MemoryDeleteResponse(BaseModel):
     id: str
