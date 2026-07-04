@@ -16,7 +16,6 @@ class CogneeService:
     def __init__(self):
         if not os.getenv("GROQ_API_KEY"):
             logger.warning("GROQ_API_KEY is not set. Recall will fail.")
-        # Encapsulated state tracker to avoid global keyword
         self.last_groq_call_time = 0.0
 
     async def remember(self, text: str, doc_id: str) -> Dict[str, Any]:
@@ -40,7 +39,6 @@ class CogneeService:
             parsed = []
             for item in memories:
                 if isinstance(item, dict):
-                    # Handle Access Control format: {"dataset_name": "...", "search_result": "..."}
                     result = item.get("search_result") or item.get("context")
                     if result:
                         parsed.append(str(result))
@@ -55,14 +53,12 @@ class CogneeService:
         try:
             print(f"🔍 Searching memory for: {question}")
 
-            # Using query_text explicitly as standard Cognee parameter name
             search_results = await cognee.search(
                 query_text=question,
                 only_context=True,
                 datasets=["legacydna_memory"]
             )
 
-            # Robust handling of various Cognee context return structures
             parsed_results = self._parse_memories_to_list(search_results)
 
             supporting_memories = []
@@ -71,8 +67,16 @@ class CogneeService:
                 context_parts.append(item)
                 supporting_memories.append(item[:200] + "..." if len(item) > 200 else item)
 
-            MAX_CONTEXT_CHARS = 1500
-            context_text = "\n\n".join(context_parts)[:MAX_CONTEXT_CHARS]
+            context_text = "\n\n".join(context_parts)
+            context_text = context_text[:10000]
+
+            # Tuned during gold-question testing: 1500 chars caused several
+            # retrieval misses on questions whose answer existed but got
+            # truncated. 3000 resolved those without re-triggering the
+            # Groq TPM rate limit.
+            MAX_CONTEXT_CHARS = 3000
+            if len(context_text) > MAX_CONTEXT_CHARS:
+                context_text = context_text[:MAX_CONTEXT_CHARS]
 
             if not context_text.strip():
                 return {
@@ -82,7 +86,6 @@ class CogneeService:
                     "supporting_memories": []
                 }
 
-            # Proactive throttle — enforce minimum gap between Groq calls asynchronously
             MIN_INTERVAL_SECONDS = 8
             elapsed = time.time() - self.last_groq_call_time
             if elapsed < MIN_INTERVAL_SECONDS:
@@ -153,7 +156,6 @@ class CogneeService:
                     datasets=["legacydna_memory"]
                 )
             except Exception as e:
-                # Handle missing dataset gracefully
                 if "DatasetNotFoundError" in str(e):
                     return {
                         "status": "success",
@@ -163,9 +165,9 @@ class CogneeService:
                     }
                 raise
 
-            # Parse results safely
             parsed_memories = self._parse_memories_to_list(memories)
-            memory_text = "\n".join(parsed_memories)[:4000]
+            memory_text = "\n".join(parsed_memories)
+            memory_text = memory_text[:4000]
 
             if not memory_text.strip():
                 return {
@@ -175,19 +177,24 @@ class CogneeService:
                     "recommendations": []
                 }
 
+            # NOTE: shape here must match contracts.py's InsightItem /
+            # RecommendationItem models (insight/source_documents,
+            # recommendation/reason/supporting_evidence/source_documents).
+            # Plain strings will fail Pydantic validation in InsightsResponse.
             prompt = f"""
             Extract success patterns, recurring problems, and recommendations from the following text.
 
-            Return ONLY valid JSON:
+            Return ONLY valid JSON in this exact shape:
             {{
-              "patterns": [],
-              "problems": [],
-              "recommendations": []
+              "patterns": [{{"insight": "...", "source_documents": ["..."]}}],
+              "problems": [{{"insight": "...", "source_documents": ["..."]}}],
+              "recommendations": [{{"recommendation": "...", "reason": "...", "supporting_evidence": "...", "source_documents": ["..."]}}]
             }}
 
             Constraints:
-            - Recommendations: short actionable statements.
-            - Patterns/Problems: concise bullet-style findings.
+            - Every insight/recommendation must include source_documents referencing the context below, even if approximate.
+            - Recommendations: short actionable statements with a clear reason and supporting evidence.
+            - Patterns/Problems: concise findings, each backed by at least one source document.
 
             Context:
             {memory_text}

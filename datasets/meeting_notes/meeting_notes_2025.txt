@@ -1,0 +1,26 @@
+ORGANIZING COMMITTEE MEETING NOTES (TECHFEST PRE-MORTEM)
+Meeting Topic: Final Operational Review and Crisis Management Planning
+Date: October 12, 2022
+Attendance: General Secretary, Finance Lead, Logistics Head, Marketing Head, Technical Coordinator.
+1. Recurring Problems Identified in Current Planning
+Security Clearance: The University Security Office has rejected the entry list three times because the ID format for external visitors is inconsistent.
+Internet Access: The IT department has still not approved the temporary high-speed SSID for the Hackathon area.
+Equipment Shortage: The Robotics club has reported that 4 out of the 10 "standard" competition kits are missing sensors.
+2. Key Discussion Topics
+Hospitality Overrun: The catering budget is currently $1,200 over the limit due to a 15% increase in the price of lunch coupons.
+Social Media Reach: Marketing reported that while Instagram engagement is high, LinkedIn (crucial for sponsors) has seen almost zero activity.
+Volunteer Morale: The Logistics Head noted that the junior volunteers are feeling overwhelmed by the 12-hour shift schedule.
+3. Decisions Made
+Decision: The Hackathon will be limited to 40 teams (down from 50) to ensure the existing internet bandwidth can support everyone without crashing.
+Decision: Lunch coupons will be restricted to "Staff and Speakers" only; students will be directed to the main canteen to save $1,000.
+Decision: The official "TechFest App" will be the primary source of truth for schedule changes; paper flyers will be discontinued immediately.
+4. Action Items
+General Secretary: Meet with the Dean of Student Affairs by Friday to finalize the security guest-list format.
+Technical Coordinator: Purchase 10 ultrasonic sensors from a local vendor tomorrow to replace the missing robotics parts. Use the contingency fund.
+Marketing Head: Create a "Professional Showcase" series on LinkedIn highlighting our Platinum sponsors by Monday.
+Logistics Head: Re-draft the volunteer roster to implement 6-hour "Half-Day" shifts to prevent burnout.
+5. Strategic Recommendations for the Final Week
+Actionable Step: Conduct a "Full Tech Rehearsal" in the auditorium on Sunday evening to check the audio-visual sync for the keynotes.
+Actionable Step: Set up a WhatsApp "Crisis Group" including only the core committee heads for instant decision-making during the event days.
+Actionable Step: Print large-scale QR codes for the "TechFest App" and place them at every entrance to reduce the load on the information desk.
+Actionable Step: Prepare a "Backup Power Plan" involving two portable generators for the Robotics Arena in case of a campus power surge.
