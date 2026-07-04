@@ -2,8 +2,8 @@ import { ReactNode } from "react";
 
 interface StatCardProps {
   title: string;
-  value: string;
-  subtitle: string;
+  value: string | number;
+  subtitle?: string;
   icon: ReactNode;
 }
 
@@ -19,6 +19,7 @@ export default function StatCard({
       <div className="flex justify-between items-start">
 
         <div>
+
           <p className="text-slate-400 text-sm">
             {title}
           </p>
@@ -27,9 +28,12 @@ export default function StatCard({
             {value}
           </h2>
 
-          <p className="text-cyan-400 mt-4 text-sm">
-            {subtitle}
-          </p>
+          {subtitle && (
+            <p className="text-cyan-400 mt-4 text-sm">
+              {subtitle}
+            </p>
+          )}
+
         </div>
 
         <div className="p-4 rounded-xl bg-slate-800">

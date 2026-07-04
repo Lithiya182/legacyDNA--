@@ -1,11 +1,15 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { UploadResponse } from "@/types/api";
 import {
   UploadCloud,
   FileText,
   CheckCircle2,
+  AlertCircle,
 } from "lucide-react";
+
+import { uploadDocument } from "@/lib/api";
 
 export default function UploadBox() {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -20,68 +24,170 @@ export default function UploadBox() {
     useState(0);
 
   const [recentUploads, setRecentUploads] =
-    useState<string[]>([]);
+    useState<UploadResponse[]>([]);
+
+  const [error, setError] =
+    useState("");
+  
+  const [dragActive, setDragActive] =
+    useState(false);
 
   const handleBrowse = () => {
     inputRef.current?.click();
   };
+  const handleDragOver = (
+  e: React.DragEvent<HTMLDivElement>
+) => {
+  e.preventDefault();
+  setDragActive(true);
+};
+
+const handleDragLeave = () => {
+  setDragActive(false);
+};
+
+const handleDrop = (
+  e: React.DragEvent<HTMLDivElement>
+) => {
+
+  e.preventDefault();
+
+  setDragActive(false);
+
+  const file = e.dataTransfer.files[0];
+
+  if (file) {
+    validateFile(file);
+  }
+
+};
 
   const handleFileChange = (
-    e: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    if (e.target.files?.length) {
-      setSelectedFile(e.target.files[0]);
-      setProgress(0);
-    }
-  };
+  e: React.ChangeEvent<HTMLInputElement>
+) => {
+
+  const file = e.target.files?.[0];
+
+  if (!file) return;
+
+  validateFile(file);
+
+};
+  
+  const validateFile = (file: File) => {
+
+  const allowedExtensions = [
+    "pdf",
+    "docx",
+    "txt",
+  ];
+
+  const extension = file.name
+    .split(".")
+    .pop()
+    ?.toLowerCase();
+
+  if (
+    !extension ||
+    !allowedExtensions.includes(extension)
+  ) {
+
+    setSelectedFile(null);
+
+    setError(
+      "Only PDF, DOCX and TXT files are supported."
+    );
+
+    return;
+  }
+
+  setError("");
+
+  setSelectedFile(file);
+
+  setProgress(0);
+
+};
 
   const handleUpload = async () => {
+
     if (!selectedFile) return;
 
-    setUploading(true);
+    try {
 
-    let current = 0;
+      setUploading(true);
 
-    const interval = setInterval(() => {
-      current += 10;
-      setProgress(current);
+      setError("");
 
-      if (current >= 100) {
-        clearInterval(interval);
+      const interval = setInterval(() => {
 
-        setUploading(false);
+        setProgress((prev) => {
 
-        setRecentUploads((prev) => [
-          selectedFile.name,
-          ...prev,
-        ]);
+          if (prev >= 90) {
+            clearInterval(interval);
+            return prev;
+          }
+
+          return prev + 10;
+
+        });
+
+      }, 150);
+
+      const response =
+        await uploadDocument(selectedFile);
+
+      clearInterval(interval);
+
+      setProgress(100);
+
+      setRecentUploads((prev) => [
+        response,
+        ...prev,
+      ]);
+
+      setTimeout(() => {
 
         setSelectedFile(null);
 
+        setUploading(false);
+
         setProgress(0);
-      }
-    }, 150);
 
-    /*
-    =============================
-    BACKEND API (Later)
-    =============================
+      }, 500);
 
-    const formData = new FormData();
-    formData.append("file", selectedFile);
+    } catch (err) {
 
-    await fetch("YOUR_BACKEND/upload", {
-      method: "POST",
-      body: formData,
-    });
+      console.error(err);
 
-    */
+      setUploading(false);
+
+      setProgress(0);
+
+      setError(
+        "Upload failed. Make sure the backend server is running."
+      );
+
+    }
+
   };
 
   return (
+
     <div className="space-y-8">
 
-      <div className="rounded-2xl border-2 border-dashed border-cyan-500 bg-slate-900 p-12 text-center">
+      {/* Upload Area */}
+
+      <div
+        onDragOver={handleDragOver}
+        onDragLeave={handleDragLeave}
+        onDrop={handleDrop}
+        className={`rounded-2xl border-2 border-dashed p-12 text-center transition-all duration-300 ${
+          dragActive
+            ? "border-cyan-400 bg-slate-800"
+            : "border-cyan-500 bg-slate-900"
+        }`}
+      >
 
         <UploadCloud
           size={60}
@@ -100,6 +206,7 @@ export default function UploadBox() {
           hidden
           ref={inputRef}
           type="file"
+          accept=".pdf,.docx,.txt"
           onChange={handleFileChange}
         />
 
@@ -110,9 +217,29 @@ export default function UploadBox() {
           Browse Files
         </button>
 
+        {error && (
+
+          <div className="mt-6 rounded-xl border border-red-500 bg-red-500/10 p-4 flex items-center gap-3">
+
+            <AlertCircle
+              size={20}
+              className="text-red-400"
+            />
+
+            <p className="text-red-400 text-sm">
+              {error}
+            </p>
+
+          </div>
+
+        )}
+
       </div>
 
+      {/* Selected File */}
+
       {selectedFile && (
+
         <div className="rounded-xl bg-slate-900 border border-slate-800 p-5">
 
           <div className="flex items-center gap-3">
@@ -134,26 +261,32 @@ export default function UploadBox() {
           </div>
 
           {!uploading && (
+
             <button
               onClick={handleUpload}
               className="mt-5 bg-cyan-500 hover:bg-cyan-400 text-slate-950 px-6 py-3 rounded-xl font-semibold transition"
             >
               Upload File
             </button>
+
           )}
 
           {uploading && (
+
             <div className="mt-6">
 
               <div className="flex justify-between text-sm text-slate-300 mb-2">
+
                 <span>Uploading...</span>
+
                 <span>{progress}%</span>
+
               </div>
 
               <div className="w-full h-3 rounded-full bg-slate-800 overflow-hidden">
 
                 <div
-                  className="h-full bg-cyan-500 transition-all duration-150"
+                  className="h-full bg-cyan-500 transition-all duration-300"
                   style={{
                     width: `${progress}%`,
                   }}
@@ -162,10 +295,14 @@ export default function UploadBox() {
               </div>
 
             </div>
+
           )}
 
         </div>
+
       )}
+
+      {/* Recent Uploads */}
 
       <div className="rounded-xl bg-slate-900 border border-slate-800 p-6">
 
@@ -174,36 +311,63 @@ export default function UploadBox() {
         </h2>
 
         {recentUploads.length === 0 ? (
-          <p className="text-slate-500">
-            No uploads yet.
-          </p>
+
+          <div className="text-center py-8">
+
+            <p className="text-slate-400">
+              No uploads yet.
+            </p>
+
+            <p className="text-slate-500 text-sm mt-2">
+              Uploaded documents will appear here.
+            </p>
+
+          </div>
+
         ) : (
+
           <div className="space-y-4">
+
             {recentUploads.map((file, index) => (
+
               <div
                 key={index}
                 className="flex items-center justify-between rounded-lg bg-slate-800 p-4"
               >
+
                 <div className="flex items-center gap-3">
 
                   <CheckCircle2 className="text-green-400" />
 
-                  <span className="text-white">
-                    {file}
-                  </span>
+                  <div>
+
+                    <p className="text-white font-semibold">
+                      {file.filename}
+                    </p>
+
+                    <p className="text-slate-400 text-sm">
+                      {file.file_type}
+                    </p>
+
+                  </div>
 
                 </div>
 
                 <span className="text-green-400 text-sm">
-                  Uploaded
+                  {file.status}
                 </span>
+
               </div>
+
             ))}
+
           </div>
+
         )}
 
       </div>
 
     </div>
+
   );
 }

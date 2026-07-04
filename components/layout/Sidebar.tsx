@@ -1,10 +1,12 @@
 "use client";
-
+import { Lightbulb } from "lucide-react";
 import Link from "next/link";
 import {
   LayoutDashboard,
   Upload,
   MessageSquare,
+  GitCompare,
+  Brain,
   Settings,
 } from "lucide-react";
 
@@ -23,6 +25,16 @@ const menuItems = [
     title: "Query",
     href: "/query",
     icon: MessageSquare,
+  },
+  {
+    title: "Compare",
+    href: "/compare",
+    icon: GitCompare,
+  },
+  {
+    title: "Insights",
+    href: "/insights",
+    icon: Brain,
   },
 ];
 
