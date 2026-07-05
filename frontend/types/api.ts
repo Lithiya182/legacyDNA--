@@ -17,16 +17,29 @@ export interface UploadResponse {
 export interface QueryResponse {
   answer: string;
   sources: string[];
+  supporting_memories: string[];
 }
 
 // ======================
 // Insights
 // ======================
 
+export interface InsightItem {
+  insight: string;
+  source_documents: string[];
+}
+
+export interface RecommendationItem {
+  recommendation: string;
+  reason: string;
+  supporting_evidence: string;
+  source_documents: string[];
+}
+
 export interface InsightsResponse {
-  success_patterns: string[];
-  recurring_problems: string[];
-  recommendations: string[];
+  success_patterns: InsightItem[];
+  recurring_problems: InsightItem[];
+  recommendations: RecommendationItem[];
 }
 
 // ======================
@@ -39,6 +52,7 @@ export interface CompareResponse {
   weaknesses: string;
   lessons: string;
 }
+
 // ======================
 // Dashboard
 // ======================

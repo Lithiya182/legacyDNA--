@@ -7,15 +7,14 @@ import {
   CheckCircle2,
   AlertCircle,
 } from "lucide-react";
+import { compareDocuments } from "@/lib/api";
+import type { CompareResponse } from "@/types/api";
 
 export default function CompareBox() {
   const [eventA, setEventA] = useState("");
   const [eventB, setEventB] = useState("");
-
   const [loading, setLoading] = useState(false);
-
-  const [result, setResult] = useState<any>(null);
-
+  const [result, setResult] = useState<CompareResponse | null>(null);
   const [error, setError] = useState("");
 
   const handleCompare = async () => {
@@ -25,30 +24,22 @@ export default function CompareBox() {
     }
 
     setError("");
-
     setLoading(true);
+    setResult(null);
 
-    // Backend Integration (Next Step)
-
-    setTimeout(() => {
-      setResult({
-        differences: "Waiting for backend...",
-        strengths: "Waiting for backend...",
-        weaknesses: "Waiting for backend...",
-        lessons: "Waiting for backend...",
-      });
-
+    try {
+      const data = await compareDocuments(eventA, eventB);
+      setResult(data);
+    } catch (err) {
+      setError("Comparison failed. Please try again.");
+    } finally {
       setLoading(false);
-    }, 1000);
+    }
   };
 
   return (
     <div className="space-y-8">
-
-      {/* Compare Card */}
-
       <div className="rounded-2xl bg-slate-900 border border-slate-800 p-8">
-
         <h2 className="text-2xl font-bold text-white">
           Compare Two Events
         </h2>
@@ -59,7 +50,6 @@ export default function CompareBox() {
         </p>
 
         <div className="grid md:grid-cols-2 gap-5 mt-8">
-
           <input
             type="text"
             placeholder="Event A"
@@ -75,18 +65,12 @@ export default function CompareBox() {
             onChange={(e) => setEventB(e.target.value)}
             className="rounded-xl bg-slate-950 border border-slate-700 p-4 text-white outline-none focus:border-cyan-500"
           />
-
         </div>
 
         {error && (
           <div className="mt-5 rounded-xl border border-red-500 bg-red-500/10 p-4 flex items-center gap-3">
-
             <AlertCircle className="text-red-400" />
-
-            <span className="text-red-400">
-              {error}
-            </span>
-
+            <span className="text-red-400">{error}</span>
           </div>
         )}
 
@@ -97,10 +81,7 @@ export default function CompareBox() {
         >
           {loading ? (
             <>
-              <Loader2
-                className="animate-spin"
-                size={18}
-              />
+              <Loader2 className="animate-spin" size={18} />
               Comparing...
             </>
           ) : (
@@ -110,69 +91,34 @@ export default function CompareBox() {
             </>
           )}
         </button>
-
       </div>
 
-      {/* Result */}
-
       {result && (
-
         <div className="rounded-2xl bg-slate-900 border border-slate-800 p-8">
-
           <h2 className="text-2xl font-bold text-white mb-8">
             Comparison Result
           </h2>
 
           <div className="grid gap-5">
-
             {[
-              {
-                title: "Differences",
-                value: result.differences,
-              },
-              {
-                title: "Strengths",
-                value: result.strengths,
-              },
-              {
-                title: "Weaknesses",
-                value: result.weaknesses,
-              },
-              {
-                title: "Lessons Learned",
-                value: result.lessons,
-              },
+              { title: "Differences", value: result.differences },
+              { title: "Strengths", value: result.strengths },
+              { title: "Weaknesses", value: result.weaknesses },
+              { title: "Lessons Learned", value: result.lessons },
             ].map((item) => (
-
-              <div
-                key={item.title}
-                className="rounded-xl bg-slate-800 p-5"
-              >
-
+              <div key={item.title} className="rounded-xl bg-slate-800 p-5">
                 <div className="flex items-center gap-3 mb-3">
-
                   <CheckCircle2 className="text-cyan-400" />
-
                   <h3 className="text-lg font-semibold text-white">
                     {item.title}
                   </h3>
-
                 </div>
-
-                <p className="text-slate-300 leading-7">
-                  {item.value}
-                </p>
-
+                <p className="text-slate-300 leading-7">{item.value}</p>
               </div>
-
             ))}
-
           </div>
-
         </div>
-
       )}
-
     </div>
   );
 }

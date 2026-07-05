@@ -7,7 +7,8 @@ from app.api.upload import router as upload_router
 from app.api.query import router as query_router
 from app.api.compare import router as compare_router
 from app.api.insights import router as insights_router
-from app.api.recommendations import router as recommendations_router 
+from app.api.recommendations import router as recommendations_router
+from app.api.dashboard import router as dashboard_router
 
 load_dotenv()
 
@@ -40,3 +41,4 @@ app.include_router(query_router, prefix="/api", tags=["Query"])
 app.include_router(compare_router, prefix="/api", tags=["Compare"])
 app.include_router(insights_router, prefix="/api", tags=["Insights"])
 app.include_router(recommendations_router, prefix="/api", tags=["Recommendations"])
+app.include_router(dashboard_router, prefix="/api", tags=["Dashboard"])
