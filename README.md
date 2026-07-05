@@ -10,7 +10,34 @@ Upload messy, real-world documents — post-event reports, sponsor contracts, me
 - **Improves** by extracting recurring success patterns and problems across documents
 - Turns those patterns into **evidence-backed recommendations** for next year's team
 
+## Why Memory Matters
+
+Student organizations face a recurring problem: every year, experienced organizers graduate and their lessons disappear with them.
+
+New teams often repeat mistakes, lose sponsor knowledge, forget logistical lessons, and restart planning from scratch.
+
+LegacyDNA preserves institutional memory using Cognee's memory lifecycle:
+
+- Remember past event knowledge through document ingestion
+- Recall historical decisions and lessons through natural-language queries
+- Improve memory by identifying recurring success patterns and failures
+- Generate recommendations from accumulated organizational experience
+- Support future memory-retirement workflows through the forget lifecycle
+
+LegacyDNA is designed as an organizational memory system rather than a simple document-search tool.
+
 ## Architecture
+
+Documents
+   ↓
+Remember()
+   ↓
+Cognee Memory Layer
+(Graph + Vector Memory)
+   ↓
+Recall() → Answers
+
+Improve() → Insights → Recommendations
 
 ```mermaid
 flowchart TD
@@ -62,8 +89,10 @@ Requires a `.env` file with `GROQ_API_KEY` set.
 
 LegacyDNA implements Cognee's core memory lifecycle:
 
+LegacyDNA's primary goal is preserving institutional memory across event-team generations, not merely retrieving information from uploaded documents.
+
 - **`remember()`** — ✅ Fully working. Ingests documents into the memory graph.
-- **`recall()`** — ✅ Working. Retrieval accuracy ~77-90% on a 30-question gold-standard test set (see `docs/test_report.md`); some retrieval ranking inconsistency under active investigation.
+- **`recall()`** — ✅ Working. Retrieval accuracy evaluated using a 30-question gold-standard benchmark covering an 11-document evaluation dataset (`docs/question_bank.md`, `docs/test_report.md`). Some retrieval ranking inconsistency remains under investigation..
 - **`improve()` / memify** — ✅ Fully working. Powers both `/insights` and `/recommendations`.
 - **`forget()`** — ⚠️ Not yet implemented. Endpoint exists and returns a clear "not implemented" response rather than failing silently.
 
@@ -79,7 +108,7 @@ Being upfront about what's not finished:
 
 ## Testing
 
-30 gold-standard questions across 5 categories (sponsors, attendance, logistics, lessons learned, recommendations) — see `docs/question_bank.md` and `docs/test_report.md` for full results and methodology.
+30 gold-standard questions across 5 categories (sponsors, attendance, logistics, lessons learned, recommendations) evaluated against an 11-document benchmark dataset. Production memory currently contains additional documents beyond the benchmark set; benchmark results therefore reflect retrieval quality on the controlled evaluation dataset rather than the entire production memory.
 
 ## Team
 
@@ -91,3 +120,14 @@ Being upfront about what's not finished:
 ## Demo Flow
 
 See `demo_script.md` for the full judge-facing walkthrough, and `docs/insight_scenarios.md` for expected answers to key demo questions.
+
+## Demo Resources
+
+- docs/demo_safe_questions.md
+- docs/judge_demo_flow.md
+
+## AI Usage Disclosure
+
+This project was developed with assistance from AI tools including ChatGPT for ideation, documentation refinement, presentation support, code review guidance, debugging assistance, and project planning.
+
+All architecture decisions, implementation work, integration, testing, and final project development were completed by the team.
