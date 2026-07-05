@@ -24,8 +24,11 @@
 **Speaker:** "And it turns those insights into strategy, automatically recommending we book venues 60 days in advance based on the 2025 success."
 
 ### Step 6: Future Team Advice (The Closer)
-**Action:** Type: *"Summarize the top 3 pieces of advice for the TechFest 2026 organizing team."*
-**Speaker:** "With LegacyDNA, next year's team doesn't start from scratch. They start with the combined experience of every team that came before them."
+**Action:** Type: *"Who is the most reliable anchor sponsor for TechFest?"*
+**Speaker:** "With LegacyDNA, next year's team doesn't start from scratch. They start with the combined experience of every team that came before them — down to knowing exactly which partners to trust and lock in first."
+*(AI answers: TechCorp, consistently reliable across all 3 years, recommended as anchor sponsor for future budget planning.)*
+
+> **Verified stable:** this question answered correctly across every test run today (2026-07-04). The original closer ("summarize top 3 advice for 2026") was swapped out after retrieval testing showed it returning inconsistent results across repeat runs — do not use it live until Role 1 confirms the retrieval fix.
 
 ---
 
