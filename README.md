@@ -110,6 +110,13 @@ Being upfront about what's not finished:
 
 30 gold-standard questions across 5 categories (sponsors, attendance, logistics, lessons learned, recommendations) evaluated against an 11-document benchmark dataset. Production memory currently contains additional documents beyond the benchmark set; benchmark results therefore reflect retrieval quality on the controlled evaluation dataset rather than the entire production memory.
 
+## Presentation
+
+LegacyDNA Hackathon Presentation:
+
+- PDF version available in `presentation/LegacyDNA_Hackathon_Presentation.pdf`
+- Canva version: https://www.canva.com/design/DAHOhTciGv4/zHd_0xPxqbIu1COqx7Sctw/edit
+
 ## Team
 
 - **Memory Engineer** — Cognee integration, memory lifecycle, retrieval quality
@@ -131,3 +138,4 @@ See `demo_script.md` for the full judge-facing walkthrough, and `docs/insight_sc
 This project was developed with assistance from AI tools including ChatGPT for ideation, documentation refinement, presentation support, code review guidance, debugging assistance, and project planning.
 
 All architecture decisions, implementation work, integration, testing, and final project development were completed by the team.
+
