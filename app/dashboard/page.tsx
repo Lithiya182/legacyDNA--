@@ -47,28 +47,28 @@ export default function DashboardPage() {
         <StatCard
           title="Knowledge Assets"
           value={dashboardData.knowledgeAssets ?? "0"}
-          subtitle="Waiting for backend"
+          subtitle="No data available"
           icon={<BrainCircuit className="text-cyan-400" />}
         />
 
         <StatCard
           title="Documents"
           value={dashboardData.documents ?? "0"}
-          subtitle="Waiting for backend"
+          subtitle="No data available"
           icon={<FileText className="text-cyan-400" />}
         />
 
         <StatCard
           title="AI Insights"
           value={dashboardData.insights ?? "0"}
-          subtitle="Waiting for backend"
+          subtitle="No data available"
           icon={<Sparkles className="text-cyan-400" />}
         />
 
         <StatCard
           title="Members"
           value={dashboardData.members ?? "0"}
-          subtitle="Waiting for backend"
+          subtitle="No data available"
           icon={<Users className="text-cyan-400" />}
         />
 

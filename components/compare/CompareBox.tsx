@@ -4,7 +4,6 @@ import { useState } from "react";
 import {
   GitCompare,
   Loader2,
-  CheckCircle2,
   AlertCircle,
 } from "lucide-react";
 
@@ -13,9 +12,7 @@ export default function CompareBox() {
   const [eventB, setEventB] = useState("");
 
   const [loading, setLoading] = useState(false);
-
   const [result, setResult] = useState<any>(null);
-
   const [error, setError] = useState("");
 
   const handleCompare = async () => {
@@ -25,17 +22,12 @@ export default function CompareBox() {
     }
 
     setError("");
-
     setLoading(true);
 
-    // Backend Integration (Next Step)
-
+    // Backend integration will replace this prototype logic
     setTimeout(() => {
       setResult({
-        differences: "Waiting for backend...",
-        strengths: "Waiting for backend...",
-        weaknesses: "Waiting for backend...",
-        lessons: "Waiting for backend...",
+        prototype: true,
       });
 
       setLoading(false);
@@ -113,64 +105,34 @@ export default function CompareBox() {
 
       </div>
 
-      {/* Result */}
+      {/* Prototype Result */}
 
       {result && (
-
         <div className="rounded-2xl bg-slate-900 border border-slate-800 p-8">
 
-          <h2 className="text-2xl font-bold text-white mb-8">
-            Comparison Result
+          <h2 className="text-2xl font-bold text-white mb-6">
+            Comparison Status
           </h2>
 
-          <div className="grid gap-5">
+          <div className="rounded-xl border border-cyan-500 bg-cyan-500/10 p-6">
 
-            {[
-              {
-                title: "Differences",
-                value: result.differences,
-              },
-              {
-                title: "Strengths",
-                value: result.strengths,
-              },
-              {
-                title: "Weaknesses",
-                value: result.weaknesses,
-              },
-              {
-                title: "Lessons Learned",
-                value: result.lessons,
-              },
-            ].map((item) => (
+            <h3 className="text-lg font-semibold text-cyan-400">
+              Comparison Feature Prototype
+            </h3>
 
-              <div
-                key={item.title}
-                className="rounded-xl bg-slate-800 p-5"
-              >
+            <p className="mt-3 text-slate-300 leading-7">
+              The event comparison workflow is currently under development.
+              It is not included in the judged demo flow.
+            </p>
 
-                <div className="flex items-center gap-3 mb-3">
-
-                  <CheckCircle2 className="text-cyan-400" />
-
-                  <h3 className="text-lg font-semibold text-white">
-                    {item.title}
-                  </h3>
-
-                </div>
-
-                <p className="text-slate-300 leading-7">
-                  {item.value}
-                </p>
-
-              </div>
-
-            ))}
+            <p className="mt-3 text-sm text-slate-400">
+              Backend integration for semantic event comparison will be enabled
+              in a future iteration.
+            </p>
 
           </div>
 
         </div>
-
       )}
 
     </div>
