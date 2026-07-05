@@ -113,9 +113,25 @@ Being upfront about what's not finished:
 ## Presentation
 
 LegacyDNA Hackathon Presentation:
-
+ 
 - PDF version available in `presentation/LegacyDNA_Hackathon_Presentation.pdf`
-- Canva version: https://www.canva.com/design/DAHOhTciGv4/zHd_0xPxqbIu1COqx7Sctw/edit
+- Canva version: https://www.canva.com/design/DAHOhTciGv4/zHd_0xPxqbIu1COqx7Sctw/edit 
+
+## Demo Video
+
+Watch the complete LegacyDNA demonstration:
+
+🎥 YouTube Demo:
+https://youtu.be/3X4II91AM3s
+
+The demo showcases:
+
+- Remember → Document ingestion into memory
+- Recall → Evidence-backed question answering
+- Improve → Organizational insights and recommendations
+- Organizational memory preservation using Cognee
+
+⚠️ Judges: Please watch until the end to see the complete Remember → Recall → Improve memory lifecycle demonstration.
 
 ## Team
 
@@ -138,4 +154,3 @@ See `demo_script.md` for the full judge-facing walkthrough, and `docs/insight_sc
 This project was developed with assistance from AI tools including ChatGPT for ideation, documentation refinement, presentation support, code review guidance, debugging assistance, and project planning.
 
 All architecture decisions, implementation work, integration, testing, and final project development were completed by the team.
-
